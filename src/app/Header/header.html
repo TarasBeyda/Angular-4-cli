@@ -1,0 +1,50 @@
+<header class="site-header">
+  <md-sidenav-container>
+    <md-sidenav align="end" #sidenav mode="side" class="md-sidenav">
+      <p>Modules Menu</p>
+      <md-nav-list class="md-nav-list">
+        <li (click)="sidenav.close()">
+          <figure><img src="https://dummyimage.com/100x100/000/fff" alt=""></figure>
+          <a md-list-item href="">Track</a>
+        </li>
+        <li (click)="sidenav.close()">
+          <figure><img src="https://dummyimage.com/100x100/000/fff" alt=""></figure>
+          <a md-list-item href="">Trace</a>
+        </li>
+        <li (click)="sidenav.close()">
+          <figure><img src="https://dummyimage.com/100x100/000/fff" alt=""></figure>
+          <a md-list-item href="">Geofence</a>
+        </li>
+        <li (click)="sidenav.close()">
+          <figure><img src="https://dummyimage.com/100x100/000/fff" alt=""></figure>
+          <a md-list-item href="">Trips/Stops</a>
+        </li>
+        <li (click)="sidenav.close()">
+          <figure><img src="https://dummyimage.com/100x100/000/fff" alt=""></figure>
+          <a md-list-item href="">Text</a>
+        </li>
+        <li (click)="sidenav.close()">
+          <figure><img src="https://dummyimage.com/100x100/000/fff" alt=""></figure>
+          <a md-list-item href="">Timesheets with edit</a>
+        </li>
+      </md-nav-list>
+
+      <div class="sidenav-admin">
+        <div class="hr-under-sidenav">
+          <hr>
+        </div>
+        <div class="sidenav-admin-item" (click)="sidenav.close()">
+          <figure><img src="https://dummyimage.com/125x125/000/fff" alt=""></figure>
+          <a [routerLink]="['/administration']">Administration</a>
+        </div>
+      </div>
+
+    </md-sidenav>
+    <md-toolbar color="primary">
+      <img src="https://dummyimage.com/140x58/000/26bd3f" class="logo" alt="logo">
+      <button md-icon-button (click)="sidenav.toggle()">
+        <md-icon class="md-24" >menu</md-icon>
+      </button>
+    </md-toolbar>
+  </md-sidenav-container>
+</header>

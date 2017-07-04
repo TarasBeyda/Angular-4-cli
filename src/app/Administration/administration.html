@@ -1,0 +1,24 @@
+<div class="wrapper-administration">
+  <aside class="admin-navigation">
+    <div class="admin-navigation-block">
+      <p>Admin Navigation</p>
+    </div>
+    <div class="admin-navigation-block">
+      <a [ngClass]="getClassActive('/administration/user-preferences')" [routerLink]="['user-preferences']">User Preferences</a>
+      <a [ngClass]="getClassActive('/administration/change-password')" [routerLink]="['change-password']">Change password</a>
+    </div>
+    <div class="admin-navigation-block">
+      <a [ngClass]="getClassActive('/administration/view-users')" [routerLink]="['view-users']">View users</a>
+      <a [ngClass]="getClassActive('/administration/view-customers')" [routerLink]="['view-customers']">View Customers</a>
+      <a [ngClass]="getClassActive('/administration/view-vehicles')" [routerLink]="['view-vehicles']">View vehicles</a>
+      <a [ngClass]="getClassActive('/administration/view-vehicle-groups')" [routerLink]="['view-vehicle-groups']">View vehicle groups</a>
+    </div>
+    <div class="admin-navigation-block">
+      <a [routerLink]="['/home']">Log out</a>
+    </div>
+  </aside>
+
+  <div class="wrapper-admin-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

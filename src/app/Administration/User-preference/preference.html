@@ -1,0 +1,126 @@
+<div class="wrapper-admin-child">
+
+  <md-sidenav-container>
+    <md-sidenav align="end" #photosUsers mode="side" class="md-sidenav">
+      <div class="sidenav-details">
+        <button md-icon-button (click)="sidenavUsers.close()">
+          <md-icon class="md-24" >close</md-icon>
+        </button>
+        <p>{{ selectedUser.userName }}</p>
+        <button md-icon-button>
+          <md-icon class="md-24" >edit</md-icon>
+        </button>
+      </div>
+
+      <div class="user-details-activity">
+        <md-tab-group>
+          <md-tab label="Details">
+            <form class="example-form">
+              <p>
+                <md-input-container class="example-full-width">
+                  <input mdInput placeholder="First name">
+                </md-input-container>
+              </p>
+              <p>
+                <md-input-container class="example-full-width">
+                  <input mdInput placeholder="Last name">
+                </md-input-container>
+              </p>
+              <p>
+                <md-input-container class="example-full-width">
+                  <input mdInput placeholder="Address">
+                </md-input-container>
+              </p>
+              <p>
+                <md-input-container class="example-full-width">
+                  <input mdInput placeholder="Customer">
+                </md-input-container>
+              </p>
+              <p class="modules-checkbox">
+                <label>Modules</label>
+                <md-checkbox>Track</md-checkbox>
+                <md-checkbox>Trace</md-checkbox>
+                <md-checkbox>Geofence</md-checkbox>
+                <md-checkbox>Trips & Stops</md-checkbox>
+              </p>
+              <p>All other user fields here.</p>
+              <div class="details-update-user">
+                <button md-raised-button>Update user</button>
+              </div>
+            </form>
+          </md-tab>
+        </md-tab-group>
+      </div>
+    </md-sidenav>
+  </md-sidenav-container>
+
+  <div class="title-preference">
+    <h1 *ngFor="let user of users">Upload</h1>
+    <img src="https://dummyimage.com/100x100/000/26bd3f" alt="">
+    <button md-icon-button (click)="sidenavUsers.open();">
+      <md-icon class="md-24" >edit</md-icon>
+    </button>
+  </div>
+
+  <div class="hr-under-title-preference">
+    <hr>
+  </div>
+
+  <div class="inf-preference">
+    <div class="inf-preference-left">
+      <p>Email</p>
+      <p>Address</p>
+      <p>Telephone</p>
+      <p>Timezone</p>
+      <p>Volume units</p>
+      <p>Distance Measurments</p>
+      <p>Prefered vehicle label</p>
+      <p>Auto logout time</p>
+    </div>
+    <div class="inf-preference-right">
+      <p>test@testing.com</p>
+      <p>Address1, Address2, Town, Country, Postcode</p>
+      <p>01723 333333</p>
+      <p>London, Lisbon - GMT +0</p>
+      <p>Litres</p>
+      <p>Miles</p>
+      <p>Display Fleet number</p>
+      <p>20 mins</p>
+    </div>
+  </div>
+
+  <div class="hr-under-inf-preference">
+    <hr>
+  </div>
+
+  <div class="list-preference">
+    <nav>
+      <ul>
+        <li>
+          <figure>
+            <img src="https://dummyimage.com/100x100/000/26bd3f" alt="">
+          </figure>
+          <a [routerLink]="['/administration/view-users']">Users</a>
+        </li>
+        <li>
+          <figure>
+            <img src="https://dummyimage.com/100x100/000/26bd3f" alt="">
+          </figure>
+          <a [routerLink]="['/administration/view-customers']">Customers</a>
+        </li>
+        <li>
+          <figure>
+            <img src="https://dummyimage.com/100x100/000/26bd3f" alt="">
+          </figure>
+          <a [routerLink]="['/administration/view-vehicles']">Vehicles</a>
+        </li>
+        <li>
+          <figure>
+            <img src="https://dummyimage.com/100x100/000/26bd3f" alt="">
+          </figure>
+          <a [routerLink]="['/administration/view-vehicle-groups']">Vehicle Groups</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

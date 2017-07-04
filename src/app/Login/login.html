@@ -1,0 +1,40 @@
+<div class="wrapper-login">
+  <md-card>
+    <md-card-content>
+      <form name="form" class="example-form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+
+        <p>
+          <md-input-container class="example-full-width">
+            <input mdInput type="email" placeholder="Email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" name="email" [(ngModel)]="model.email" #email="ngModel" required />
+            <md-hint [hidden]="email.valid || email.untouched">
+              <div *ngIf="email.errors && email.errors.required">Email is required</div>
+              <div *ngIf="email.errors && email.errors.pattern">Email is invalid</div>
+            </md-hint>
+          </md-input-container>
+        </p>
+
+        <p>
+          <md-input-container class="example-full-width">
+            <input mdInput type="password" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+            <md-hint [hidden]="password.valid || password.untouched">
+              <div *ngIf="password.errors && password.errors.required">Email is required</div>
+              <div *ngIf="password.errors && password.errors.pattern">Email is invalid</div>
+            </md-hint>
+          </md-input-container>
+        </p>
+
+        <p *ngIf="!loading">{{ error }}</p>
+
+        <p>
+          <button type="submit" md-raised-button>Login</button>
+        </p>
+
+      </form>
+
+      <hr>
+
+      <a [routerLink]="['/forgot-password']">Forgotten password</a>
+
+    </md-card-content>
+  </md-card>
+</div>

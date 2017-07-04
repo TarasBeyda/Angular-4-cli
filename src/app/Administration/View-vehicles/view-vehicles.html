@@ -1,0 +1,100 @@
+<div class="wrapper-admin-child">
+  <div class="sidenav-user">
+    <md-sidenav-container>
+      <md-sidenav align="end" #sidenavUsers mode="side" class="md-sidenav">
+        <div class="sidenav-details">
+          <button md-icon-button (click)="sidenavUsers.close()">
+            <md-icon class="md-24" >close</md-icon>
+          </button>
+          <p>{{ selectedUser.vehicleName }}</p>
+          <button md-icon-button>
+            <md-icon class="md-24" >edit</md-icon>
+          </button>
+        </div>
+
+        <div class="user-details-activity">
+          <md-tab-group>
+            <md-tab label="Details">
+              <form class="example-form">
+                <p>
+                  <md-input-container class="example-full-width">
+                    <input mdInput placeholder="Vehicle group name">
+                  </md-input-container>
+                </p>
+                <p>
+                  <md-input-container class="example-full-width">
+                    <input mdInput placeholder="Customer">
+                  </md-input-container>
+                </p>
+                <p>
+                  <md-select placeholder="Select vehicles for the group">
+                    <md-option *ngFor="let role of roles" [value]="role.value">
+                      {{ role.viewValue }}
+                    </md-option>
+                  </md-select>
+                </p>
+                <p>All other user fields here.</p>
+                <div class="details-update-user">
+                  <button md-raised-button>Update user</button>
+                </div>
+              </form>
+            </md-tab>
+            <md-tab label="Activity">
+
+            </md-tab>
+          </md-tab-group>
+        </div>
+      </md-sidenav>
+
+      <md-toolbar class="title-users">
+        <div class="article-users">
+          <p>Vehicle Name</p>
+        </div>
+        <div class="func-button-users">
+          <button md-raised-button>Add new</button>
+          <button md-raised-button>Delete</button>
+        </div>
+      </md-toolbar>
+    </md-sidenav-container>
+  </div>
+
+  <div class="users-list">
+    <div class="users-list-item users-list-item-main">
+      <div class="user-list-categ users-list-check">
+        <p><md-checkbox class="example-margin" [(ngModel)]="checked"></md-checkbox></p>
+      </div>
+      <div class="user-list-categ users-list-vehicle-group">
+        <p>Vehicle name</p>
+      </div>
+      <div class="user-list-categ users-list-vehicle-customers">
+        <p>Customers</p>
+      </div>
+      <div class="user-list-categ users-list-vehicles">
+        <p>Vehicles</p>
+      </div>
+      <div class="user-list-categ users-list-vehicle-created">
+        <p>Created</p>
+      </div>
+    </div>
+
+    <div class="row-users">
+      <div class="users-list-item" (click)="sidenavUsers.open(); selectUser(user)" *ngFor="let user of users">
+        <div class="user-list-categ users-list-check">
+          <p><md-checkbox class="example-margin" [(ngModel)]="checked"></md-checkbox></p>
+        </div>
+        <div class="user-list-categ users-list-vehicle-group">
+          <p>{{ user.vehicleName }}</p>
+        </div>
+        <div class="user-list-categ users-list-vehicle-customers">
+          <p>{{ user.customers }}</p>
+        </div>
+        <div class="user-list-categ users-list-vehicles">
+          <p>{{ user.vehicles }}</p>
+        </div>
+        <div class="user-list-categ users-list-vehicle-created">
+          <p>{{ user.created }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
